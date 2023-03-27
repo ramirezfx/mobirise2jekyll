@@ -1,0 +1,10 @@
+<!--name this file tags-list.html-->
+{% assign tags = include.tags | split:'|' | sort | uniq %}
+{% capture tag_list %}{{ page.tags | join: "|"}}{% endcapture %}
+{% if tags.size > 0 %}
+{% for tag in tags %}
+<span class="cat-links"><a href="/tags/#{{ tag }}" rel="category tag"><i class="fa-solid fa-tags"></i> {{ tag }}</a>&nbsp;</span>
+{% endfor %}
+{% else %}
+<div class="tag-list"></div>
+{% endif %}

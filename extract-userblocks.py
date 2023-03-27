@@ -4,11 +4,11 @@ import shutil
 # Create the base folder layout for jeckyll
 # -----------------------------------------
 
-folders = ["_includes", "_data", "_layouts", "_posts", "_templates", "_templates/contentblocks", "pages"]
+# folders = ["_includes", "_data", "_layouts", "_posts", "_templates", "_templates/contentblocks", "pages"]
 
-for folder in folders:
-    if not os.path.exists(folder):
-        os.makedirs(folder)
+# for folder in folders:
+#     if not os.path.exists(folder):
+#         os.makedirs(folder)
 
 # Correct the paths
 # -----------------

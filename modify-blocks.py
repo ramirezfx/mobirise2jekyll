@@ -81,8 +81,8 @@ html_file_path = '_includes/header-block.html'
 # Define the code to insert
 code_to_insert = '''{% assign name_page = "" %}
                    {% for page in site.pages %}
-                       {% unless page.menutitle == null or page.hide or name_page contains page.title %}
-                       <li class="nav-item"><a class="nav-link link text-black display-4" href="{{ page.url }}">{{ page.title }}</a></li>
+                       {% unless page.menutitle == null or page.hide or name_page contains page.menutitle %}
+                       <li class="nav-item"><a class="nav-link link text-black display-4" href="{{ page.url }}">{{ page.menutitle }}</a></li>
                        {% endunless %}
                        {% assign name_page = page.menutitle | append: name_page %}
                    {% endfor %}'''

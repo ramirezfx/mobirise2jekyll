@@ -1,0 +1,5 @@
+{% capture tag_list %}{{ page.tags | join: "|"}}{% endcapture %}
+{% include tag-list.html tags=tag_list %}
+{% for tags in post.tags %}
+<span><a href="/tags/#{{ tags }}" rel="category tag"><i class="fa-solid fa-tags"></i> {{ tags }}</a>&nbsp;</span>
+{% endfor %}

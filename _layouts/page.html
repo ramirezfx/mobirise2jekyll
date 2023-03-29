@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang="en-US">
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<head>
-		{% include head-block.html %}
-	</head>
-	<body>
-		{% include header-block.html %}
-		{% include page-content.html %}
+<html lang="en">
+    <head>
+        {% include head-block.html %}
+    </head>
 
-		{% include pagination-navigation.html %}
-		{% include footer-block.html %}
-        	{% include scripts.html %}
-        	{% if page.htmlbeforebodyend %}
-			{% include {{ page.htmlbeforebodyend }} %}
-        	{% endif %}
+    <body>
+        {% if site.htmlbeforebody %}
+            {% include {{ site.htmlbeforebody }} %}
+        {% endif %}
+        
+        {% if page.htmlbeforebody %}
+            {% include {{ page.htmlbeforebody }} %}
+        {% endif %}
+        <!-- Put BODY-HTML here: -->
+        {% include header-block.html %}
+        {% include page-content.html %}
+        {% include footer-block.html %}
+        {% include scripts.html %}
+        {% include cookie-alert-block.html %}
+        <!-- End BODY-HTML -->
+        {% if site.htmlbeforebodyend %}
+            {% include {{ site.htmlbeforebodyend }} %}
+        {% endif %}
+        
+        {% if page.htmlbeforebodyend %}
+            {% include {{ page.htmlbeforebodyend }} %}
+        {% endif %}
     </body>
 </html>

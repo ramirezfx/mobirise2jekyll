@@ -9,8 +9,8 @@ plugins:
   - jekyll-youtube
 
 url: # Your complete URL https://your.domain.om
-sitename: # Your Site-Namae
-imglogopath: # Path To Logo-Image
+sitename: My Site # Your Site-Namae
+imglogopath: /assets/images/logo.png # Path To Logo-Image
 faviconpath: # Path To Favicon
 cookiealert:
 appletouchiconpath: # Path To Apple-Touch Favicon

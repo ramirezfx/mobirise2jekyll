@@ -2,17 +2,17 @@
     {% if paginator.total_pages > 1 %}
     <div class="pagination">
         {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | relative_url }}"><i class="fa-solid fa-square-caret-left"></i> Prev</a>
+        <p class="mbr-text mbr-fonts-style display-7"><a href="{{ paginator.previous_page_path | relative_url }}"><i class="fa-solid fa-square-caret-left"></i> Prev</a></p>
         {% else %}
-        <span><i class="fa-solid fa-square-caret-left"></i> Prev</span>
+        <p class="mbr-text mbr-fonts-style display-7"><span><i class="fa-solid fa-square-caret-left"></i> Prev</span></p>
         {% endif %} {% for page in (1..paginator.total_pages) %} {% if page == paginator.page %} {{ page }} {% elsif page == 1 %}
-        <a href="{{ '/' | relative_url }}"> {{ page }}| </a>
+        <p class="mbr-text mbr-fonts-style display-7"><a href="{{ '/' | relative_url }}"> {{ page }}| </a></p>
         {% else %}
-        <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}"> |{{ page }} </a>
+        <p class="mbr-text mbr-fonts-style display-7"><a href="{{ site.paginate_path | relative_url | replace: ':num', page }}"> |{{ page }} </a></p>
         {% endif %} {% endfor %} {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | relative_url }}">Next <i class="fa-solid fa-square-caret-right"></i></a>
+        <p class="mbr-text mbr-fonts-style display-7"><a href="{{ paginator.next_page_path | relative_url }}">Next <i class="fa-solid fa-square-caret-right"></i></a></p>
         {% else %}
-        <span>Next <i class="fa-solid fa-square-caret-right"></i></span>
+        <p class="mbr-text mbr-fonts-style display-7"><span>Next <i class="fa-solid fa-square-caret-right"></i></span></p>
         {% endif %}
     </div>
     {% endif %}

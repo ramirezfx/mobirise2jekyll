@@ -28,62 +28,76 @@ layout: page
     {% endif %}
     {% endfor %}
 
-    <!-- Displays the list of tags-->
+
+    <section class="content5 cid-tyyJcTFpkx" data-bs-version="5.1" id="content5-4">
+        <div class="container">
+        <div class="row justify-content-center">
+        <div class="col-md-12 col-lg-10">
+        <p class="mbr-text mbr-fonts-style display-7">
+                <!-- Displays the list of tags-->
     {% include tag-list.html tags=rawtags %}
-<br><br>
-    <!-- Displays the posts and pages that contains the tag-->
-    <div class="posts">
-        {% for tag in tags %}
-        <h5 id="{{ tag | cgi_escape }}" class="tag-anchor">
-            <a href="&#35;{{ tag | cgi_escape }}"><i class="fas fa-tag fa-fw fa-sm"></i> {{ tag }}</a>
-            <a href="#" style="float: right"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"> </i> </a>
-        </h5>
-        <!-- Posts and collection for each tags -->
-        <div class="tag-posts">
-
-            <!-- Pages -->
-            {% for page in site.pages %}
-            {% if page.tags contains tag %}
-            <p class="tag-title">
-                <a href="{{ page.url | relative_url }}">
-                    <i class="far fa-file-image" aria-hidden="true"></i>
-                    {{ page.title }}
-                </a>
-                {% include post-info.html date=page.date %}
-            </p>
-            {% endif %}
-            {% endfor %}
-
-            <!-- Posts -->
-            {% for post in site.posts %}
-            {% if post.tags contains tag %}
-            <p class="tag-title">
-                <a href="{{ post.url | relative_url }}">
-                    <i class="far fa-file-alt" aria-hidden="true"></i>
-                    {{ post.title }}
-                </a>
-
-                {% include post-info.html date=post.date %}
-            </p>
-            {% endif %}
-            {% endfor %}
-
-            <!-- Portfolio -->
-            {% for note in site.portfolio %}
-            {% if note.tags contains tag %}
-            <h5 class="tag-title">
-                <a href="{{ note.url | relative_url }}">
-                    <i class="far fa-file" aria-hidden="true"></i>
-                    {{ note.title }}
-                </a>
-
-                {% include post-info.html date=note.date %}
+    <br><br>
+        <!-- Displays the posts and pages that contains the tag-->
+        <div class="posts">
+            {% for tag in tags %}
+            <h5 id="{{ tag | cgi_escape }}" class="tag-anchor mbr-section-subtitle mbr-fonts-style mb-4 display-5">
+                <a href="&#35;{{ tag | cgi_escape }}"><i class="fas fa-tag fa-fw fa-sm"></i> {{ tag }}</a>
+                <a href="#" style="float: right"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"> </i> </a>
             </h5>
-            {% endif %}
+            <!-- Posts and collection for each tags -->
+            <div class="tag-posts">
+    
+                <!-- Pages -->
+                {% for page in site.pages %}
+                {% if page.tags contains tag %}
+                <p class="tag-title mbr-text mbr-fonts-style display-7">
+                    <a href="{{ page.url | relative_url }}">
+                        <i class="far fa-file-image" aria-hidden="true"></i>
+                        {{ page.title }}
+                    </a>
+
+                </p>
+                {% endif %}
+                {% endfor %}
+    
+                <!-- Posts -->
+                {% for post in site.posts %}
+                {% if post.tags contains tag %}
+                <p class="tag-title">
+                    <a href="{{ post.url | relative_url }}">
+                        <i class="far fa-file-alt" aria-hidden="true"></i>
+                        {{ post.title }}
+                    </a>
+    
+
+                </p>
+                {% endif %}
+                {% endfor %}
+    
+                <!-- Portfolio -->
+                {% for note in site.portfolio %}
+                {% if note.tags contains tag %}
+                <h5 class="tag-title">
+                    <a href="{{ note.url | relative_url }}">
+                        <i class="far fa-file" aria-hidden="true"></i>
+                        {{ note.title }}
+                    </a>
+    
+                    {% include post-info.html date=note.date %}
+                </h5>
+                {% endif %}
+                {% endfor %}
+    
+            </div>
             {% endfor %}
-
+    
         </div>
-        {% endfor %}
+        </p>
+        </div>
+        </div>
+        </div>
+        <!-- content-template END -->
+        </section>
 
-    </div>
+
 </div>

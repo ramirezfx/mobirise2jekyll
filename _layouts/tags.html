@@ -43,7 +43,7 @@ layout: page
                     <div class="posts">
                         {% for tag in tags %}
                             <h5 id="{{ tag | cgi_escape }}" class="tag-anchor mbr-section-subtitle mbr-fonts-style mb-4 display-5">
-                            <a href="&#35;{{ tag | cgi_escape }}"><i class="fas fa-tag fa-fw fa-sm"></i> {{ tag }}</a>
+                            <p class="mbr-text mbr-fonts-style display-7"><a href="&#35;{{ tag | cgi_escape }}"><i class="fas fa-tag fa-fw fa-sm"></i> {{ tag }}</a></p>
                             <a href="#" style="float: right;"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"> </i> </a>
                             </h5>
                             <!-- Posts and collection for each tags -->
@@ -63,7 +63,7 @@ layout: page
                                 <!-- Posts -->
                                 {% for post in site.posts %}
                                     {% if post.tags contains tag %}
-                                        <p class="tag-title">
+                                        <p class="tag-title mbr-text mbr-fonts-style display-7">
                                         <a href="{{ post.url | relative_url }}">
                                         <i class="far fa-file-alt" aria-hidden="true"></i>
                                         {{ post.title }}

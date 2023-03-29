@@ -55,20 +55,24 @@ with open(output_file, "w") as f:
 # Extract the head-block
 # ----------------------
 
-# open index.html and read its contents
 with open('index.html', 'r') as f:
-    content = f.read()
+    index_html = f.read()
 
-# find the contents between <head> and </head>
-start = content.find('<head>')
-end = content.find('</head>') + len('</head>')
-head_contents = content[start:end]
+head_start = '<head>'
+head_end = '</head>'
+head_start_index = index_html.find(head_start)
+head_end_index = index_html.find(head_end)
 
-# write the contents to head-block.html in _includes directory without <head> and </head> tags
-head_contents = head_contents.replace('<head>', '').replace('</head>', '')
-with open('_includes/head-block.html', 'w') as f:
-    f.write(head_contents)
+head_content = index_html[head_start_index+len(head_start):head_end_index]
 
+with open('_includes/head-block.html', 'r+') as f:
+    head_block_html = f.read()
+    insert_index = head_block_html.find('<!-- Paste Your HEAD-HTML-Code Here -->') + len('<!-- Paste Your HEAD-HTML-Code Here -->')
+    f.seek(insert_index)
+    existing_content = f.read()
+    f.seek(insert_index)
+    f.write('\n' + head_content + '\n' + existing_content)
+    
 # Extract the User-Blocks
 # -----------------------
 

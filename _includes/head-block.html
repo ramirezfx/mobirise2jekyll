@@ -1,0 +1,21 @@
+	{% if site.htmlheadstart %}
+		{% include {{ site.htmlheadstart }} %}
+	{% endif %}
+	
+	{% if page.htmlheadstart %}
+		{% include {{ page.htmlheadstart }} %}
+	{% endif %}
+
+	<!-- Paste Your HEAD-HTML-Code Here -->
+
+
+	
+	<!-- End HEAD-HTML-Code -->
+
+	{% if site.htmlbeforeheadend %}
+		{% include {{ site.htmlbeforeheadend }} %}
+	{% endif %}
+
+	{% if page.htmlbeforeheadend %}
+		{% include {{ page.htmlbeforeheadend }} %}
+	{% endif %}

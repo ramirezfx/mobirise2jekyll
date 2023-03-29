@@ -22,7 +22,7 @@ layout: page
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             json: '{{ "/data/search.liquid" | relative_url }}',
-            searchResultTemplate: '<div class="search-title"><a href="{url}"><h3> {title}</h3></a><div class="meta">{date} <div class="right"><i class="fas fa-tag"></i> {tags}</div></div><p>{excerpt}</p></div><hr> ',
+            searchResultTemplate: '<div class="search-title"><a href="{url}"><h3 class="mbr-section-subtitle mbr-fonts-style mb-4 display-5"> {title}</h3></a><div class="right"><i class="fas fa-tag"></i> <p class="mbr-text mbr-fonts-style display-7">{tags}</p></div><p class="mbr-text mbr-fonts-style display-7">{excerpt}</p></div><hr> ',
             noResultsText: '{{ site.data.language.str_no_result_found | default: "No result found" }}',
             limit: 10,
             fuzzy: false,

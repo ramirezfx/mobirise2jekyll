@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include head-block.html %}
+    </head>
+
+    <body>
+        {% if site.htmlbeforebody %}
+            {% include {{ site.htmlbeforebody }} %}
+        {% endif %}
+        
+        {% if page.htmlbeforebody %}
+            {% include {{ page.htmlbeforebody }} %}
+        {% endif %}
+        <!-- Put BODY-HTML here: -->
+        {% include header-block.html %}
+        {% include blog-content.html %}
+        {% include footer-block.html %}
+        {% include scripts.html %}
+        {% include cookie-alert-block.html %}
+        <!-- End BODY-HTML -->
+        {% if site.htmlbeforebodyend %}
+            {% include {{ site.htmlbeforebodyend }} %}
+        {% endif %}
+        
+        {% if page.htmlbeforebodyend %}
+            {% include {{ page.htmlbeforebodyend }} %}
+        {% endif %}
+    </body>
+</html>

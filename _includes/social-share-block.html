@@ -1,0 +1,39 @@
+
+<div style="text-align: center; padding-top: 30px;">
+<p class="mbr-section-title mb-3 align-center mbr-fonts-style" mbr-theme-style="display-2" mbr-if="showTitle" data-app-selector=".mbr-section-title, .mbr-social-likes">
+    <b style="font-family: tahoma, arial, helvetica, sans-serif;">Please Share! <i class="fa-regular fa-face-smile-wink"></i></b>
+</p>
+
+<h4>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" title="{{ site.data.social.language.str_share_on }} Facebook">
+        <i class="fa-brands fa-facebook-square"></i>
+    </a>
+    <a href="https://twitter.com/intent/tweet?text={{ page.title | strip_html | url_encode }}%20{{ page.url | absolute_url | url_encode }}" target="_blank" title="{{ site.data.social.language.str_tweet }}">
+        <i class="fa-brands fa-twitter-square"></i>
+    </a>
+    <a
+        href="https://pinterest.com/pin/create/button/?url={{ page.url | absolute_url }}&media={{ page.feature-img | absolute_url }}$description={{ page.excerpt | strip_html | url_encode }}"
+        target="_blank"
+        title="{{ site.data.social.language.str_pin_it }}"
+    >
+        <i class="fa-brands fa-pinterest-square"></i>
+    </a>
+    <a
+        href="https://www.tumblr.com/share?v=3&u={{ page.url | absolute_url }}&quote={{ page.title | url_encode }}%20%7C%20{{ site.title | strip_html | url_encode }}&s="
+        target="_blank"
+        title="{{ site.data.social.language.str_share_on }} Tumblr"
+    >
+        <i class="fa-brands fa-tumblr-square"></i>
+    </a>
+    <a
+        href="https://www.reddit.com/submit?url={{ page.url | absolute_url }}&title={{ page.title | strip_html | url_encode }}%20%7C%20{{ site.title | strip_html | url_encode }}"
+        target="_blank"
+        title="{{ site.data.social.language.str_share_on }} Reddit"
+    >
+        <i class="fa-brands fa-reddit-square"></i>
+    </a>
+    <a href="mailto:?subject={{ page.title }}%20%7C%20{{ site.title  }}&body={{ page.url | absolute_url }}" target="_blank" title="{{ site.data.social.language.str_email }}">
+        <i class="fa-solid fa-square-envelope"></i>
+    </a>
+</h4>
+</div>

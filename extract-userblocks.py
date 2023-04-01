@@ -10,6 +10,16 @@ import shutil
 #     if not os.path.exists(folder):
 #         os.makedirs(folder)
 
+# Copy from source to working-dir:
+# --------------------------------
+
+source_dir = '_html-source'
+for item in os.listdir(source_dir):
+    if item != 'readme.md':
+        source_path = os.path.join(source_dir, item)
+        dest_path = os.path.join(os.getcwd(), item)
+        shutil.move(source_path, dest_path)
+
 # Correct the paths
 # -----------------
 

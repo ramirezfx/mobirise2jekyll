@@ -372,3 +372,22 @@ new_content = re.sub(r'data-src="[^"]+"', r'data-src="{{ post.thumbnail }}"', co
 with open(file_path, 'w') as f:
     f.write(new_content)
 
+# Delete index.html and replace it with index-new.html
+# ----------------------------------------------------
+# define the file names
+old_file = "index.html"
+new_file = "index-new.html"
+
+# delete the old file
+if os.path.exists(old_file):
+    os.remove(old_file)
+    print(f"{old_file} deleted.")
+else:
+    print(f"{old_file} does not exist.")
+
+# rename the new file to the old file name
+if os.path.exists(new_file):
+    os.rename(new_file, old_file)
+    print(f"{new_file} renamed to {old_file}.")
+else:
+    print(f"{new_file} does not exist.")

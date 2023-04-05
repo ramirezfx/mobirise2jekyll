@@ -8,7 +8,6 @@ plugins:
   - jekyll-paginate
   - jekyll-youtube
 
-url: # Your complete URL https://your.domain.om
 sitename: My Site # Your Site-Namae
 imglogopath: /assets/images/logo.png # Path To Logo-Image
 faviconpath: # Path To Favicon
